@@ -1,9 +1,9 @@
 FROM golang AS building
 
-LABEL maintainer="jeferson@linuxtips.com.br"
+LABEL maintainer="mhassegawa@gmail.com"
 LABEL version="1.0"
 
-ENV exporter_version 0.18.1
+ENV exporter_version 1.4.0
 
 RUN curl -LO https://github.com/prometheus/node_exporter/releases/download/v${exporter_version}/node_exporter-${exporter_version}.linux-amd64.tar.gz \
     && tar -xvzf node_exporter-${exporter_version}.linux-amd64.tar.gz  \
@@ -18,4 +18,3 @@ ENTRYPOINT node_exporter --path.procfs=/usr/proc --path.sysfs=/usr/sys \
             --collector.filesystem.ignored-fs-types="^(sys|proc|auto|cgroup|devpts|ns|au|fuse\.lxc|mqueue)(fs|)$$"
 
 EXPOSE 9100
-
