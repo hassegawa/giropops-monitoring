@@ -1,9 +1,9 @@
 FROM alpine
 
-LABEL maintainer="jeferson@linuxtips.com.br"
+LABEL maintainer="mhassegawa@gmail.com"
 LABEL version="1.0"
 
-ARG PROMETHEUS_VERSION=2.13.0
+ARG PROMETHEUS_VERSION=2.37.1
 
 RUN set -xe && \
     adduser -s /bin/false -D -H prometheus && \
